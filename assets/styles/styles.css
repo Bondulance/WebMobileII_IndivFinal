@@ -1,0 +1,560 @@
+/*This is my main color scheme, I will be using var() to use these variables*/
+:root {
+  --dark: #2b2d42;
+  --gray: #8d99ae;
+  --white: #edf2f4;
+  --red: #ef233c;
+  --bright: #d90429;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  flex-direction: column;
+  /* this is here to make go back to top button, a nice look for the user */
+  scroll-behavior: smooth;
+}
+
+#title {
+  /*Raleway will be my main and only font, just different weights will be used*/
+  font-family: "Raleway", serif;
+  color: var(--white);
+}
+#footerTitle {
+  font-family: "Raleway", serif;
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+#container {
+  /*Priority to flex over grid on this project*/
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleLink {
+  /* Title button will be a link to Homepage, I just dont want an underline on the text. Cursor will still be a pointer to indicate however.*/
+  text-decoration: none;
+}
+
+.footbtn {
+  color: white;
+  font-family: "Raleway", serif;
+  border: 1px solid white;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 300ms ease;
+}
+
+#footerButtons {
+  display: flex;
+  flex-direction: column;
+  /* Apply proper spacing */
+  gap: 10px;
+  margin-left: 25px;
+}
+/* split my footer into two sections, this being the right half */
+#footerRight {
+  display: flex;
+  gap: 20px;
+  margin-right: 100px;
+  width: 50%;
+}
+
+/* Tried my hand at a universal style, I like doing this stuff in React, didn't really work out */
+/* as effectively as usual but still worked alright */
+#flex {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+header {
+  background-color: var(--dark);
+  width: 100%;
+  padding: 5px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* the picture of the uk flag logo */
+#unionJack {
+  height: 40px;
+}
+#headerLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+nav {
+  margin-right: 60px;
+}
+
+li {
+  /* Inline is used here as I wanted my List items to be displayed in a row, not in a column */
+  display: inline;
+}
+
+dl {
+  gap: 10px;
+}
+dd {
+  padding: 10px 0px;
+  font-family: "Raleway", serif;
+}
+
+.navLink {
+  color: var(--white);
+  font-family: "Raleway", serif;
+  font-size: 1.15rem;
+  transition: 300ms ease;
+  padding-right: 40px;
+  text-align: left;
+}
+.navLink:hover {
+  color: var(--red);
+}
+
+#mobileButton {
+  /* Displays none by default to only show on mobile screens */
+  display: none;
+  background: none;
+  border: none;
+}
+
+.topLevel {
+  /* this was used to make my top level nav elements look bolder than the bottom nav elements*/
+  font-weight: bold;
+  float: left;
+  color: var(--white);
+  font-family: "Raleway", serif;
+  font-size: 1.15rem;
+  transition: 300ms ease;
+  padding-right: 40px;
+  text-align: left;
+}
+
+#hamburger {
+  /*got rid of background on the button */
+  width: 50px;
+  background: none;
+  border: none;
+}
+
+.footerLink:hover {
+  color: var(--bright);
+}
+
+main {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#poster {
+  background: var(--white);
+  width: 80%;
+  padding: 5px 30px;
+  padding-bottom: 40px;
+}
+
+#alt {
+  text-align: center;
+}
+
+h2 {
+  color: var(--gray);
+  font-family: "Raleway", serif;
+  font-size: 1.8rem;
+}
+
+hr {
+  border: 1px solid var(--bright);
+  margin-bottom: 40px;
+}
+
+#left {
+  width: 60%;
+  font-family: "Raleway", serif;
+  font-size: 1.2rem;
+}
+#right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+dt {
+  font-weight: bold;
+  transition: 300ms ease;
+}
+
+span {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+#splitContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Used to create different layouts for different pages*/
+#splitContainerAlt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.londonPhoto {
+  width: 500px;
+  border: 1px solid var(--dark);
+  object-fit: cover;
+}
+
+.planeImg {
+  width: 500px;
+  border: 1px solid var(--dark);
+  object-fit: cover;
+}
+
+.connector {
+  color: var(--red);
+  font-weight: 600;
+  transition: 300ms ease;
+}
+.connector:hover {
+  color: var(--dark);
+}
+
+footer {
+  background: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 20px;
+  margin-top: 100px;
+}
+
+.cardLink {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: var(--gray);
+  color: var(--white);
+  font-family: "Raleway", serif;
+  transition: 300ms ease;
+}
+.cardLink:hover {
+  color: var(--dark);
+}
+
+#mobileImg {
+  display: none;
+}
+
+#footerLeft {
+  display: flex;
+  align-items: center;
+
+  padding: 0px 20px;
+}
+#footerLeft > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+#left-border {
+  border-left: 1px solid var(--white);
+  height: 100px;
+}
+#unionJackfooter {
+  /*Image sizing*/
+  height: 30px;
+}
+
+.footerLink {
+  color: white;
+  font-family: "Raleway", serif;
+  transition: 300ms ease;
+}
+
+#lower {
+  margin-top: 20px;
+  width: 80%;
+  padding: 5px 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+#map {
+  transition: 300ms ease;
+}
+
+#map:hover {
+  width: 300px;
+}
+
+.bigben {
+  width: 30%;
+}
+
+#leftAlt {
+  width: 60%;
+  font-family: "Raleway", serif;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/*This is my css for the hamburger menu*/
+#hamburgerMenu {
+  position: absolute;
+  z-index: 100;
+  background: var(--dark);
+  border: 1px solid var(--white);
+  display: none;
+  right: 0;
+}
+#hamburgerMenu > ul {
+  display: flex;
+  flex-direction: column;
+}
+#hamburgerMenu > ul > li {
+  padding-top: 10px;
+}
+
+#close {
+  /* This is for the X on the hamburger menu to close it*/
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  top: 0;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+/* CSS for carousel buttons */
+.carousel {
+  background: #fff;
+  border: 1px solid;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+}
+.carousel:active {
+  background: var(--bright);
+}
+
+.card {
+  border: solid 1px black;
+  background-color: var(--dark);
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 320px;
+}
+.imgCard {
+  /* Card used to help navigate through lower levels, as well as get back to top level */
+  width: 250px;
+  padding: 10px;
+}
+
+h3 {
+  color: var(--white);
+  font-family: "Raleway", serif;
+  font-size: 1.5rem;
+}
+h4 {
+  color: var(--dark);
+  font-family: "Raleway", serif;
+  font-size: 1.5rem;
+}
+
+#wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: 1;
+  height: 100%;
+}
+#mapContainer {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  background: var(--dark);
+}
+
+#inside {
+  margin: 20px;
+  font-family: "Raleway", serif;
+  color: var(--white);
+}
+
+#mapImage {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  padding: 20px;
+  background: var(--gray);
+}
+#mapImage > img {
+  width: 100%;
+  box-shadow: 3px 3px 3px 0px black;
+}
+
+/* Matches the colored pins on the map, used to show which one is which to the user */
+#opt1:hover {
+  color: var(--bright);
+}
+
+#opt2:hover {
+  color: #2ac2f3;
+}
+
+#opt3:hover {
+  color: #f3932a;
+}
+
+#opt4:hover {
+  color: #a42af3;
+}
+
+/* All of my media queries start and end past this point */
+
+@media (max-width: 1690px) {
+  #links {
+    display: none;
+  }
+  #mobileButton {
+    display: block;
+  }
+  .planeImg {
+    width: 300px;
+  }
+  /* #flex {
+          flex-direction: column;
+      } */
+}
+
+@media (max-width: 553px) {
+  #unionJack {
+    display: none;
+  }
+  header {
+    padding: 5px 20px;
+  }
+  #hamburger {
+    width: 30px;
+    padding: 0;
+  }
+  #title {
+    font-size: 1.5rem;
+  }
+  .card {
+    max-width: 160px;
+  }
+  .imgCard {
+    width: 60%;
+    padding: 10px;
+  }
+  #mapContainer {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  mapImage > img {
+    width: 400px;
+  }
+  #bigben {
+    width: 100%;
+  }
+  .imgCard {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1471px) {
+  #londonPhoto {
+    width: 90%;
+  }
+  #lower {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1224px) {
+  #splitContainer {
+    /* For responsiveness */
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #londonPhoto {
+    width: 80%;
+  }
+  #poster {
+    padding: 5px 10px;
+  }
+  #left {
+    width: 80%;
+  }
+  h2 {
+    text-align: center;
+  }
+  #mobileImg {
+    display: block;
+  }
+  #right {
+    display: none;
+  }
+  /* This was implemented as, how they are usually hover, phone and tablet do not hover
+    meaning they would not kno which element was which on the map*/
+  #opt1 {
+    color: var(--bright);
+  }
+  #opt2 {
+    color: #2ac2f3;
+  }
+  #opt3 {
+    color: #f3932a;
+  }
+  #opt4 {
+    color: #a42af3;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Resized many of the larger photos with this class and media query to get responsiveness*/
+  .londonPhoto {
+    width: 300px;
+    border: 1px solid var(--dark);
+  }
+}
