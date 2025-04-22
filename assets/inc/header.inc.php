@@ -9,6 +9,7 @@
             ?></title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <script src="./assets/scripts/script.js" defer></script>
+    <script src="./assets/scripts/ajax.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!--Raleway font, imported from google-->

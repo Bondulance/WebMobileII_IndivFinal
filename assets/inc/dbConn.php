@@ -7,5 +7,5 @@ if (mysqli_connect_errno()) {
     echo 'connection failed: ' . mysqli_connect_error();
     exit();
 } else {
-    echo 'connection good';
+    // echo 'connection good';
 }
