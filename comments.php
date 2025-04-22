@@ -45,7 +45,7 @@ include('./assets/inc/tools.inc.php');
                 // We know this is only going to iterate once here, so we're okay with
                 // grabbing the title out and using it as the page's title.
                 while ($row = $result->fetch_assoc()) {
-                    include("./assets/inc/Comment.php");
+                    include('./assets/inc/comment.inc.php');
                 }
                 $result->free_result();
             } else {

@@ -8,4 +8,6 @@ if (mysqli_connect_errno()) {
     exit();
 } else {
     // echo 'connection good';
+    // for some reason this is still popping up
+    // TODO: get rid of this message on the page pleaseeee
 }
