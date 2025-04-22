@@ -62,7 +62,7 @@ include('./assets/inc/tools.inc.php');
     </section>
 
 
-
+    <script src="./assets/scripts/ajax.js"></script>
 </main>
 <?php
 require_once('./assets/inc/footer.inc.php');

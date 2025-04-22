@@ -58,7 +58,7 @@ function sendComment() {
 
   request = new XMLHttpRequest();
   // uses the post method, send it back to the comments php file, and asynchronous is true
-  request.open("POST", "../inc/submitComment.php", true);
+  request.open("POST", "assets/inc/submitComment.php", true);
   request.setRequestHeader("Content-Type", "application/json");
   // event handler, every time the request state changes, this function will be called
   request.onreadystatechange = function() {
