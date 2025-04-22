@@ -55,7 +55,7 @@ function sendComment() {
   };
 
   // uses the post method, send it back to the comments php file, and asynchronous is true
-  request.open("POST", "../../comments.php", true);
+  request.open("POST", "./comments.php", true);
   // event handler, every time the request state changes, this function will be called
   request.onreadystatechange = function () {
     // this will ensure that the request is completely valid and complete

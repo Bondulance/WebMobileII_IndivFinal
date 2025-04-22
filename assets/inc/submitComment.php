@@ -1,0 +1,21 @@
+
+<?php
+
+// Prepare the SQL statement to prevent PRofessor Snyder from trying to do a SQL injection
+
+$prepareStatement = $mysqli->prepare("INSERT INTO Comments (`Name`, `Message`) VALUES (?, ?)");
+$prepareStatement->bind_param("ss", $name, $message);
+
+$name = sanitize($_POST['name'], 50);
+$message = sanitize($_POST['message'], 255);
+
+// check that the statement is ready to be executed, don't want to run if their are no requests
+$prepareStatement->execute();
+
+if ($prepareStatement->error) {
+    print_r($prepareStatement->error);
+}
+
+$prepareStatement->close();
+$mysqli->close();
+exit();
