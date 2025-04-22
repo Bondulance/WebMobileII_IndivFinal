@@ -14,7 +14,7 @@ include('./assets/inc/tools.inc.php');
         <h2>Leave a Review!</h2>
         <hr>
         <div id="splitContainerAlt">
-            <form id="commentForm" method="POST" action="./assets/inc/submitComment.php">
+            <form id="commentForm">
                 <label for="name">Name:</label><br>
                 <p id="warning1"></p>
                 <input type="text" id="name" name="name"><br><br>

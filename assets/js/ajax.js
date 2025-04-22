@@ -1,4 +1,5 @@
 // AJAX BEGINS
+let request;
 
 let commentForm = document.getElementById("commentForm");
 console.log(commentForm);
@@ -41,38 +42,43 @@ function validateForm() {
 }
 
 function sendComment() {
-  const request = new XMLHttpRequest();
+  
   //variable name = the name input in the form
   const name = commentForm[0].value;
   //variable message = the message input in the form
   const message = commentForm[1].value;
   // Request Values
 
+
   // My ajax model
   const comment = {
-    name: name,
-    message: message,
+    "name": name,
+    "message": message,
   };
 
+  request = new XMLHttpRequest();
   // uses the post method, send it back to the comments php file, and asynchronous is true
-  request.open("POST", "./comments.php", true);
+  request.open("POST", "../inc/submitComment.php", true);
+  request.setRequestHeader("Content-Type", "application/json");
   // event handler, every time the request state changes, this function will be called
-  request.onreadystatechange = function () {
-    // this will ensure that the request is completely valid and complete
-    if (request.readyState == 4 && request.status <= 299) {
-      const requestResponse = request.responseText;
-      console.log(requestResponse);
-      let parseRequest = JSON.parse(requestResponse);
-      console.log(parseRequest);
-
-      if (parseRequest.success) {
-        // call retrieveData function
-        retrieveData();
-      }
-    }
-  };
+  request.onreadystatechange = function() {
+    handleSubmit(request);
+  }; 
   // sends the stringified comment object to the server
   request.send(JSON.stringify(comment));
+}
+
+function handleSubmit(request) {
+  if (request.readyState == 4) {
+    if (request.status >= 200 && request.status <= 299) {
+    
+      let payload = JSON.parse(request.responseText);
+
+      if (payload.success) {
+          retrieveData();
+      }
+    }
+  }
 }
 
 /**
@@ -82,30 +88,21 @@ function retrieveData() {
   // creates the request object here
 
   const request = new XMLHttpRequest();
+
   request.open("POST", "../../comments.php", true);
   request.onreadystatechange = function () {
-    if (request.readyState == 4 && request.status <= 299) {
-      showResponse(request.responseText);
-    }
+    handleResponse(request);
   };
   request.send();
 }
 
-/***
- * This function is used to show the response from the server
- * on the page
- *
- * @param response - the AJAX response from the server
- */
+function handleResponse(response) {
+  if (request.readyState == 4) {
+    if (request.status >= 200 && request.status <= 299) {
+      let req = response.target.response;
+      let payload = JSON.parse(req);
 
-function showResponse(responseText) {
-  let payload = JSON.parse(responseText);
-
-  console.log(responseText);
-  console.log(payload);
-
-  // time to clear the container if it is not empty
-  const commentContainer = document.getElementById("commentsContainer");
+      const commentContainer = document.getElementById("commentsContainer");
 
   // quickly check if the container exists
   if (!commentContainer) {
@@ -121,19 +118,24 @@ function showResponse(responseText) {
 
   // lastly, we have to display all the comments
   // SO, do a for each comment in the database
-  payload.forEach((comment) => {
+    payload.forEach((comment) => {
     // It is time for DHTML
     const commentDiv = document.createElement("div");
     commentDiv.className = "comment";
 
     // h4 for name
     const name = document.createElement("h4");
+    name.appendChild(document.createTextNode(comment.name));
 
     // p for message
     const message = document.createElement("p");
+    message.appendChild(document.createTextNode(comment.message));
     // append the name and message to the comment div
     commentDiv.appendChild(name);
     commentDiv.appendChild(message);
     commentContainer.appendChild(commentDiv);
-  });
+      }
+    )}
+  }
+
 }
