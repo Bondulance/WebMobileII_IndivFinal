@@ -1,5 +1,6 @@
 
 <?php
+include('./tools.inc.php');
 require_once('./dbConn.php');
 // Prepare the SQL statement to prevent PRofessor Snyder from trying to do a SQL injection
 if ($mysqli->connect_errno) {

@@ -134,6 +134,9 @@ function handleResponse(response) {
     commentDiv.appendChild(name);
     commentDiv.appendChild(message);
     commentContainer.appendChild(commentDiv);
+
+    commentForm[0].value = ""; // clear the name field
+    commentForm[1].value = ""; // clear the message field
       }
     )}
   }
