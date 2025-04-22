@@ -14,17 +14,24 @@ commentForm.addEventListener("submit", function (event) {
 });
 
 function validateForm() {
+  // boolean for true, if no errors pop up then it will stay true, and the form will submit
   let valid = true;
 
   if (commentForm[0].value == "") {
+    // this will be my warning1 message, tried doing it as a class but that got weird so ID it is.
     warning1.textContent = "Please enter your name.";
+    // make it display
     warning1.style.display = "block";
+    // make it red, cuz red is for errors
     warning1.style.color = "red";
+    // this is wrong, so it is not valid, change that guy to false
     valid = false;
   } else {
+    // it is valid, good job, no need for warning
     warning1.style.display = "none";
   }
 
+  // same deal with this message input
   if (commentForm[1].value == "") {
     warning2.textContent = "Please enter your message.";
     warning2.style.display = "block";
@@ -89,7 +96,9 @@ function retrieveData() {
 
   const request = new XMLHttpRequest();
 
+  // opens the request, send it to the comment page and it is asynchronous so the boolean is true
   request.open("POST", "../../comments.php", true);
+  //calls handleResponse whenever the request state changes
   request.onreadystatechange = function () {
     handleResponse(request);
   };
@@ -134,9 +143,6 @@ function handleResponse(response) {
     commentDiv.appendChild(name);
     commentDiv.appendChild(message);
     commentContainer.appendChild(commentDiv);
-
-    commentForm[0].value = ""; // clear the name field
-    commentForm[1].value = ""; // clear the message field
       }
     )}
   }
