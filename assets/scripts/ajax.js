@@ -37,7 +37,7 @@ function handleSubmitResponse(response) {
 
 function getComments() {
     http = new XMLHttpRequest();
-    http.open("POST", "./data/comment.data.php", true);
+    http.open("POST", "assets/data/comment.data.php", true);
     http.onreadystatechange = handleGetResponse;
     http.send();
 }
@@ -48,10 +48,10 @@ function handleGetResponse(response) {
             let responseData = http.responseText;
             let payload = JSON.parse(responseData);
 
-            const commentArea = document.getElementById("commentsContainer");
+            const commentArea = document.getElementById("commentList");
 
-            while (commentArea.children.length > 0) {
-                commentArea.removeChild(commentArea.children[0]);
+            while (commentArea.firstChild) {
+                commentArea.removeChild(commentArea.firstChild);
             }
 
             payload.forEach(comment => {

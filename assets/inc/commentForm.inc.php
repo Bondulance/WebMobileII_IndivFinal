@@ -21,34 +21,37 @@
     <section>
         <div id="commentsContainer">
             <h2>Comments:</h2>
-
-            <?php
-            // creates form connecion and throws error if it fails
-
-            // if the form is submitted, this block will run
+            <div id="commentList">
 
 
 
-            // Thank you ISTE.230 for teaching me simple select statements.
-            $sql = "SELECT `Name`, `Message` FROM `Comments`";
-            if ($result = $mysqli->query($sql)) {
+                <?php
+                // creates form connecion and throws error if it fails
 
-                // We know this is only going to iterate once here, so we're okay with
-                // grabbing the title out and using it as the page's title.
-                while ($row = $result->fetch_assoc()) {
-                    include("assets/inc/Comment.inc.php");
+                // if the form is submitted, this block will run
+
+
+
+                // Thank you ISTE.230 for teaching me simple select statements.
+                $sql = "SELECT `Name`, `Message` FROM `Comments`";
+                if ($result = $mysqli->query($sql)) {
+
+                    // We know this is only going to iterate once here, so we're okay with
+                    // grabbing the title out and using it as the page's title.
+                    while ($row = $result->fetch_assoc()) {
+                        include("assets/inc/Comment.inc.php");
+                    }
+                    $result->free_result();
+                } else {
+                    echo "<p> There are no comments yet. Be the first! </p>";
                 }
-                $result->free_result();
-            } else {
-                echo "<p> There are no comments yet. Be the first! </p>";
-            }
 
 
 
-            ?>
+                ?>
 
 
-
+            </div>
         </div>
     </section>
 
