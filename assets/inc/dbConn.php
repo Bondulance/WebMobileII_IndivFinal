@@ -6,8 +6,4 @@ $mysqli = mysqli_connect('localhost', 'bbw6934', 'Nonsignificant4+divided', 'bbw
 if (mysqli_connect_errno()) {
     echo 'connection failed: ' . mysqli_connect_error();
     exit();
-} else {
-    // echo 'connection good';
-    // for some reason this is still popping up
-    // TODO: get rid of this message on the page pleaseeee
 }
