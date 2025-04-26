@@ -5,14 +5,14 @@
         <h2>Leave a Review!</h2>
         <hr>
         <div id="splitContainerAlt">
-            <form id="commentForm" name="commentForm" onsubmit="sendComments(event)">
+            <form id="commentForm" name="commentForm" onsubmit="sendComments(event);">
                 <label for="name">Name:</label><br>
                 <p id="warning1"></p>
                 <input type="text" id="Name" name="Name" placeholder="John Doe"><br><br>
                 <label for="message">Message:</label><br>
                 <p id="warning2"></p>
                 <textarea id="Message" name="Message" placeholder="message..."></textarea><br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="submit">
             </form>
         </div>
 

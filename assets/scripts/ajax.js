@@ -1,18 +1,48 @@
 let http;
 
+
 function sendComments(e) {
     e.preventDefault();
+    
     console.log("Send comment called");
 
+    
     let commentForm = document.getElementById("commentForm");
+    let w1 = document.getElementById("warning1");
+    let w2 = document.getElementById("warning2");
     
     const name = commentForm["Name"].value;
     const message = commentForm["Message"].value;
+
+    console.log("Name: " , name);
+    console.log("Message: " , message);
+
+
+    if (name === "") {
+        w1.innerText = "Please enter in a name";
+        w1.style.color = "red";
+        console.log("name is empty");
+       
+    } else {
+        w1.innerText = "";
+    }
+
+    if (message === "") {
+        w2.innerText = "Please enter in a message";
+        w2.style.color = "red";
+        console.log("message is empty");
+      
+    } else {
+        w2.innerText = "";
+    }
+
+    console.log("validated");
 
     const request =  {
         "name" : name,
         "message" : message
     };
+
     console.log(request);
 
     http = new XMLHttpRequest();
