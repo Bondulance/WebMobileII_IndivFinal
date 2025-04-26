@@ -1,4 +1,5 @@
 <?php
+$pageTitle = "Learn London | Comments";
 require_once("./assets/inc/header.inc.php")
 
 ?>

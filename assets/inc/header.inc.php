@@ -87,6 +87,11 @@ require_once("assets/inc/tools.inc.php");
                                 Nature
                             </a>
                         </li>
+                        <li>
+                            <a href="./comments.php" class="navLink">
+                                Comments
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div id="mobile">
@@ -150,6 +155,11 @@ require_once("assets/inc/tools.inc.php");
                 <li>
                     <a class="navLink" href="./nature.php">
                         Nature
+                    </a>
+                </li>
+                <li>
+                    <a href="./comments.php" class="navLink">
+                        Comments
                     </a>
                 </li>
                 <li>

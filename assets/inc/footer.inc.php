@@ -38,6 +38,7 @@
             <div><a class="footerLink" id="MONUMENTS" href="./monuments.php">Monuments</a></div>
 
             <div><a class="footerLink" id="NATURE" href="./nature.php">Nature</a></div>
+            <div> <a class="footerLink" id="COMMENTS" href="./comments.php">Comments</a></div>
 
             <div><a class="footerLink" id="GRADING" href="./grading.php">Grading Page</a></div>
 

@@ -52,6 +52,13 @@ label {
   color: var(--white);
   padding: 10px;
   border: none;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background: var(--gray);
+  color: var(--dark);
+
 }
 
 .footbtn {
@@ -327,13 +334,21 @@ footer {
 
 .bigben {
   width: 30%;
+  max-width: 300px;
+  min-width: 200px;
 }
 
 #leftAlt {
   width: 60%;
   font-family: "Raleway", serif;
   font-size: 1.2rem;
-  text-align: center;
+  text-align: left;
+}
+
+#leftAlt > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*This is my css for the hamburger menu*/
@@ -409,7 +424,7 @@ h4 {
 #wrapper {
   display: flex;
   gap: 20px;
-  flex-wrap: 1;
+  flex-wrap: wrap;
   height: 100%;
 }
 #mapContainer {

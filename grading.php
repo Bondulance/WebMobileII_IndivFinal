@@ -77,6 +77,26 @@ include('./assets/inc/header.inc.php');
                             resizes to make Learn London fully responsive for users.
                         </p>
                     </li>
+                    <li>
+                        <h4>Originial JavaScript component</h4>
+                        <p>The Image carousel which can be seen on the Activities and Architecture pages.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>DHTML component</h4>
+                        <p>I made my comment form / review area fully AJAX, creating dynamic comment blocks.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Extras</h4>
+                        <p>Fully AJAX comment form.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Fixes:</h4>
+                        <p>Fixed all center aligned text issues and mobile responsiveness errors. (Mostly setting min-width's on images).
+                        </p>
+                    </li>
                 </ol>
             </div>
         </div>
